@@ -31,7 +31,8 @@ namespace DiztinGUIsh
         {
             CPU65C816 = 0x00,
             APUSPC700 = 0x01,
-            GPUSuperFX = 0x02
+            GPUSuperFX = 0x02,
+            CPU65C816_EMU = 0x03
         }
 
         [Flags]
