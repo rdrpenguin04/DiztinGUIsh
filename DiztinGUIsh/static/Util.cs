@@ -53,11 +53,12 @@ namespace DiztinGUIsh
             return -1;
         }
 
-        public static int GetIntermediateAddress(int offset)
+        public static int GetIntermediateAddress(int offset)F
         {
             switch (Data.GetArchitechture(offset))
             {
                 case Data.Architechture.CPU65C816: return CPU65C816.GetIntermediateAddress(offset);
+                case Data.Architechture.CPU65C816_EMU: return CPU65C816_EMU.GetIntermediateAddress(offset);
                 case Data.Architechture.APUSPC700: return -1;
                 case Data.Architechture.GPUSuperFX: return -1;
             }
@@ -69,6 +70,7 @@ namespace DiztinGUIsh
             switch (Data.GetArchitechture(offset))
             {
                 case Data.Architechture.CPU65C816: return CPU65C816.GetInstruction(offset);
+                case Data.Architechture.CPU65C816_EMU: return CPU65C816_EMU.GetInstruction(offset);
                 case Data.Architechture.APUSPC700: return "";
                 case Data.Architechture.GPUSuperFX: return "";
             }
@@ -347,6 +349,7 @@ namespace DiztinGUIsh
             switch (arch)
             {
                 case Data.Architechture.CPU65C816: return "65C816";
+                case Data.Architechture.CPU65C816_EMU: return "65C816 (65C02 mode)";
                 case Data.Architechture.APUSPC700: return "SPC700";
                 case Data.Architechture.GPUSuperFX: return "SuperFX";
             }
